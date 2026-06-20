@@ -2,7 +2,11 @@ import numpy as np
 import pandas as pd
 
 from hapf.config import DataConfig
-from hapf.data.cgm import build_cgm_windows, chronological_subject_split, fit_standardizer
+from hapf.data.cgm import (
+    build_cgm_windows,
+    chronological_subject_split,
+    fit_standardizer,
+)
 
 
 def _frame() -> pd.DataFrame:
@@ -46,4 +50,3 @@ def test_chronological_split_and_train_only_standardizer() -> None:
     training = np.flatnonzero(collection.subject_keys == "human-a")
     standardizer = fit_standardizer(collection, training)
     assert standardizer.mean < 150.0
-
