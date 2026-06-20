@@ -8,11 +8,10 @@ __pycache__/
 dist/
 build/
 runs/
-data/
+/data/
 *.parquet
 *.csv
 *.pt
 *.pth
 *.ckpt
 .env
-
